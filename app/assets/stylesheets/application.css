@@ -16,7 +16,8 @@
 body	{font-family: 'メイリオ',
 		'Hiragino Kaku Gothic Pro',
 		sans-serif;
-		background-color: #edede3}
+/*		background-color: #edede3 } */
+	 		background-image: url("kumo1.jpg") }
 
 h1		
 		{font-size:45px;
