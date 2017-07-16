@@ -2,7 +2,7 @@
 body	{font-family: 'メイリオ',
 		'Hiragino Kaku Gothic Pro',
 		sans-serif;
-		background-color: #edede3 }
+ 		background-image: url("kumo2.jpg") }
 		
 input, textarea {display: block}
 

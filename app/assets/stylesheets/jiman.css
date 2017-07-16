@@ -2,14 +2,18 @@
 body	{font-family: 'メイリオ',
 		'Hiragino Kaku Gothic Pro',
 		sans-serif;
-		background-color: #ff0000}
+	 	background-image: url("jiman-background-2s.jpg") }
 
-input, textarea {display: block}
+input, textarea {display: block ;
+				background-color: rgba(100,100,100,0.5)
+}
 
-input		{width: 400px}
+input		{width: 400px ;
+			background-color: rgba(100,100,100,0.5)
+}
 
 input[type= "submit"]	{width: 200px;
-				background-color: #ffaa00;
+				background-color: rgba(255,100,0,0.5);
 			}
 
 textarea			{width: 600px;
