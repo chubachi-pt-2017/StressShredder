@@ -1,0 +1,2 @@
+class Talker < ApplicationRecord
+end
