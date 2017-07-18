@@ -5,12 +5,15 @@ class CommentsController < ApplicationController
   end
 
   def add
-    @msg = "edit data.[id = " + params[:id] + "]"
-    @comment = Comment.find(params[:id])
-    if request.patch? then 
-       @comment.update(comment_params)
-     goback
+    @msg = "add new data."
+    @comment = Comment.new
+  end
+
+  def create
+    if request.post? then 
+       Comment.create(comment_params)
     end
+    redirect_to '/comments'
   end
 
   def edit
