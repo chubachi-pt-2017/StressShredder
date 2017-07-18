@@ -5,12 +5,15 @@ class TalkersController < ApplicationController
   end
 
   def add
-    @msg = "edit data.[id = " + params[:id] + "]"
-    @talker = Talker.find(params[:id])
-    if request.patch? then 
-       @talker.update(talker_params)
-     goback
+    @msg = "add new data."
+    @talker = Talker.new
+  end
+  
+  def create
+    if request.post? then 
+       Talker.create(talker_params)
     end
+    redirect_to '/talkers'
   end
 
   def edit

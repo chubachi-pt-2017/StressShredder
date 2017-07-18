@@ -1,2 +1,15 @@
 <h1>Talkers#add</h1>
 <p>Find me in app/views/talkers/add.html.erb</p>
+<p><%= @msg %></p>
+<table>
+	<%= form_for(@talker, url:{controller:'talkers', action:'edit', id:@talker.id}) do |form| %>
+	<tr><th>Name</th>
+		<td><%= form.text_field :name %></td></tr>
+	<tr><th>pass</th>
+		<td><%= form.text_field :pass %></td></tr>
+	</tr>
+	<tr><th></th>
+		<td><%= form.submit "送信" %></td></tr>
+	</tr>
+	<% end %>
+</table>

@@ -1,2 +1,21 @@
 <h1>Comments#edit</h1>
 <p>Find me in app/views/comments/edit.html.erb</p>
+<p><%= @msg %></p>
+<table>
+	<%= form_for(@comment, url:{controller:'comments', action:'edit', id:@comment.id}) do |form| %>
+	<tr><th>talker_id</th>
+		<td><%= form.text_field :talker_id %></td></tr>
+	<tr><th>ts</th>
+		<td><%= form.text_field :ts %></td></tr>
+	</tr>
+	<tr><th></th>
+			<td><%= form.text_field :kubun %></td></tr>
+	</tr>
+	<tr><th></th>
+			<td><%= form.text_field :comment %></td></tr>
+	</tr>
+	<tr><th></th>
+		<td><%= form.submit "送信" %></td></tr>
+	</tr>
+	<% end %>
+</table>

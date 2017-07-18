@@ -1,20 +1,30 @@
 Rails.application.routes.draw do
+  
   get 'comments/index'
+  get 'comments', to: 'comments#index'
 
   get 'comments/add'
-
+  post 'comments/add' , to: 'comments#add'
+  
   get 'comments/edit'
-
+  get 'comments/edit/:id', to: 'comments#edit'
+  patch 'comments/edit/:id' , to: 'comments#edit'
+  
   get 'comments/list'
+  get 'comments/list', to: 'comments#list'
 
   get 'talkers/index'
+  get 'talkers', to: 'talkers#index'
 
   get 'talkers/add'
-
+  post 'talkers/add', to: 'talkers#add'
   get 'talkers/edit'
-
+  
+  get 'talkers/edit/:id', to: 'talkers#edit'
+  patch 'talkers/edit/:id', to: 'talkers#edit'
   get 'talkers/list'
-
+  get 'talkers/list', to: 'talkers#list'
+  
   get 'sessions/new'
 
   get 'static_pages/home'
