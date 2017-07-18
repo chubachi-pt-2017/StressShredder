@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'comments/index'
+
+  get 'comments/add'
+
+  get 'comments/edit'
+
+  get 'comments/list'
+
   get 'talkers/index'
 
   get 'talkers/add'
