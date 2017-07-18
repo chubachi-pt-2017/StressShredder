@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'talkers/index'
+
+  get 'talkers/add'
+
+  get 'talkers/edit'
+
+  get 'talkers/list'
+
   get 'sessions/new'
 
   get 'static_pages/home'
