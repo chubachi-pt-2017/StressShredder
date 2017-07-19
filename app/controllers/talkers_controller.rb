@@ -1,4 +1,5 @@
 class TalkersController < ApplicationController
+  
   def index
     @msg = 'Talker data. '
     @data = Talker.all
@@ -10,19 +11,22 @@ class TalkersController < ApplicationController
   end
   
   def create
-    if request.post? then 
-       Talker.create(talker_params)
+    @talker = Talkers.new Talkers_params
+    if @talker.save then 
+        redirect_to '/talkers'
     end
-    redirect_to '/talkers'
+       render 'add'
   end
 
   def edit
     @msg = "edit data.[id = " + params[:id] + "]"
     @talker = Talker.find(params[:id])
-    if request.patch? then 
-       @talker.update(talker_params)
-     goback
-    end
+  end
+  
+  def update
+   obj = Talker.find(params[:id])
+   obj.update(talker_params)
+   redirect_to '/talkers'
   end
 
   def list

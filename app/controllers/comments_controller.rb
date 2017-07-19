@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def index
     @msg = 'Comment data. '
     @data = Comment.all
@@ -10,21 +11,24 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if request.post? then 
-       Comment.create(comment_params)
+    @comment = Comment.new Comment_params
+    if @comment.save then 
+          redirect_to '/comments'
     end
-    redirect_to '/comments'
+       render 'add'
   end
 
   def edit
-      @msg = "edit data.[id = " + params[:id] + "]"
+    @msg = "edit data.[id = " + params[:id] + "]"
     @comment = Comment.find(params[:id])
-    if request.patch? then 
-       @comment.update(comment_params)
-     goback
-    end
   end
-
+  
+  def update
+   obj = Comment.find(params[:id])
+   obj.update(talker_params)
+   redirect_to '/comments'
+  end
+  
   def list
     @msg = 'Comment data. '
     @data = Comment.all
