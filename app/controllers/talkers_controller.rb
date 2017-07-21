@@ -5,6 +5,12 @@ class TalkersController < ApplicationController
     @data = Talker.all
   end
 
+  def list
+    @msg = 'Talker data list. '
+    @data = Talker.all
+###    @talker = Talker.find(params[:id])
+  end
+  
   def add
     @msg = 'add new data.'
     @talker = Talker.new
@@ -29,11 +35,6 @@ class TalkersController < ApplicationController
    redirect_to '/talkers'
   end
 
-  def list
-    @msg = 'Talker data list. '
-    @talker = Talker.find(params[:id])
-  end
-  
 private
 def talker_params
    params.require(:talker).permit(:name, :pass)

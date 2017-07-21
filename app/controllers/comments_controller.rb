@@ -4,6 +4,12 @@ class CommentsController < ApplicationController
     @msg = 'Comment data. '
     @data = Comment.all
   end
+  
+  def list
+    @msg = 'Comment data. '
+    @data = Comment.all
+###    @comment = Comment.find(params[:id])
+  end
 
   def add
     @msg = "add new data."
@@ -27,11 +33,6 @@ class CommentsController < ApplicationController
    obj = Comment.find(params[:id])
    obj.update(Comment_params)
    redirect_to '/comments'
-  end
-  
-  def list
-    @msg = 'Comment data. '
-    @data = Comment.all
   end
 
 private
