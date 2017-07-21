@@ -1,6 +1,13 @@
 <h1>Talkers#edit</h1>
 <p>Find me in app/views/talkers/edit.html.erb</p>
 <p><%= @msg %></p>
+<% if @talker.errors.any? %>
+<ul>
+	<% @talker.errors.full_messeges.each do |err| %>
+	<li><%= err %></li>
+	<% end %>
+</ul>
+
 <table>
 	<%= form_for(@talker, url:{controller:'talkers', action:'update', id:@talker.id}) do |form| %>
 	<tr><th>Name</th>

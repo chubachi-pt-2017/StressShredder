@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   
   def update
    obj = Comment.find(params[:id])
-   obj.update(talker_params)
+   obj.update(Comment_params)
    redirect_to '/comments'
   end
   
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
 
 private
 def comment_params
-   params.require(:comment).permit(:talker_id, :kubun, :comment )
+   params.require(:comment).permit(:talker_id, :ts, :kubun, :comment )
 end
 
 def goback
