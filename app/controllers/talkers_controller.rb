@@ -6,12 +6,12 @@ class TalkersController < ApplicationController
   end
 
   def add
-    @msg = "add new data."
+    @msg = 'add new data.'
     @talker = Talker.new
   end
   
   def create
-    @talker = Talker.new Talkers_params
+    @talker = Talker.new talker_params
     if @talker.save then 
         redirect_to '/talkers'
     end
@@ -31,7 +31,7 @@ class TalkersController < ApplicationController
 
   def list
     @msg = 'Talker data list. '
-    @talker = Talker.find(parms[:id])
+    @talker = Talker.find(params[:id])
   end
   
 private

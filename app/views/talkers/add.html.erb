@@ -3,14 +3,14 @@
 <p><%= @msg %></p>
 <% if @talker.errors.any? %>
 <ul>
-	<% @talker.errors.full_messeges.each do |err| %>
+	<% @talker.errors.full_messages.each do |err| %>
 	<li><%= err %></li>
 	<% end %>
 </ul>
-
+<% end %>
 <table>
 	<%= form_for(@talker, url:{controller:'talkers', action:'create' }) do |form| %>
-	<tr><th>pass</th>
+	<tr><th>name</th>
 		<td><%= form.text_field :name %></td></tr>
 	<tr><th>pass</th>
 		<td><%= form.text_field :pass %></td></tr>
