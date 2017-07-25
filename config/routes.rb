@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'comments/index'
   get 'comments', to: 'comments#index'
   get 'comments/add'
-  post 'comments/add'
+  post 'comments/add', to: 'comments#create'
 
   get   'comments/edit/:id', to: 'comments#edit'
   patch 'comments/edit/:id', to: 'comments#update'

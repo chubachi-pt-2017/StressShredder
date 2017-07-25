@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
   
   def index
-    @msg = 'Comment data. '
+    @msg = 'Comment index data. '
     @data = Comment.all
   end
   
   def list
-    @msg = 'Comment data. '
+    @msg = 'Comment list data.'
     @data = Comment.all
 ###    @comment = Comment.find(params[:id])
+###    @data = Comment.find(params[:id])
   end
 
   def add
@@ -17,9 +18,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new Comment_params
+    @comment = Comment.new comment_params
     if @comment.save then 
           redirect_to '/comments'
+          return
     end
        render 'add'
   end
@@ -31,7 +33,7 @@ class CommentsController < ApplicationController
   
   def update
    obj = Comment.find(params[:id])
-   obj.update(Comment_params)
+   obj.update(comment_params)
    redirect_to '/comments'
   end
 

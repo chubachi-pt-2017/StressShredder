@@ -3,7 +3,7 @@
 <p><%= @msg %></p>
 <% if @talker.errors.any? %>
 <ul>
-	<% @talker.errors.full_messages.each do |err| %>
+	<% @talker.errors.full_talkers.each do |err| %>
 	<li><%= err %></li>
 	<% end %>
 </ul>

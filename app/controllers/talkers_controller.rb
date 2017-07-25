@@ -8,6 +8,7 @@ class TalkersController < ApplicationController
   def list
     @msg = 'Talker data list. '
     @data = Talker.all
+
 ###    @talker = Talker.find(params[:id])
   end
   
@@ -20,6 +21,7 @@ class TalkersController < ApplicationController
     @talker = Talker.new talker_params
     if @talker.save then 
         redirect_to '/talkers'
+        return
     end
        render 'add'
   end
