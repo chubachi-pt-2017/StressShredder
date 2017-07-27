@@ -1,16 +1,35 @@
 Rails.application.routes.draw do
+#
+  get 'talkers/index'
+  get 'talkers', to: 'talkers#index'
+  get 'talkers/add'
+  post 'talkers/add', to: 'talkers#create'
+  
+  get   'talkers/edit/:id', to: 'talkers#edit'
+  patch 'talkers/edit/:id', to: 'talkers#update'
+  
+  get 'talkers/list'
+  get 'talkers/:id', to: 'talkers#list'
+#
+  get 'comments/index'
+  get 'comments', to: 'comments#index'
+  get 'comments/add'
+  post 'comments/add', to: 'comments#create'
+
+  get   'comments/edit/:id', to: 'comments#edit'
+  patch 'comments/edit/:id', to: 'comments#update'
+  get 'comments/list'
+  get 'comments/:id', to: 'comments#list'
+###
   get 'sessions/new'
-
   get 'static_pages/home'
-
 ###
   get    '/guchi'    => 'static_pages#guchi'
   get    '/jiman'    => 'static_pages#jiman'
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
-  
-  
+###
   get    '/guchi-feedback' => 'static_pages#guchi-feedback'
   get    '/jiman-feedback' => 'static_pages#jiman-feedback'
   get    '/inori-feedback' => 'static_pages#inori-feedback'
@@ -25,6 +44,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

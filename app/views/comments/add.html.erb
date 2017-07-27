@@ -1,0 +1,32 @@
+<h1>Comments#add</h1>
+<p>Find me in app/views/comments/add.html.erb</p>
+<p><%= @msg %></p>
+
+<% if @comment.errors.any? %>
+<ul>
+	<% @talker.errors.full_comments.each do |err| %>
+	<li><%= err %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<table>
+	<%= form_for(@comment, url:{controller:'comments', action:'create' }) do |form| %>
+	<tr><th>id</th>
+	<td><%= form.text_field :id %></td></tr>
+	<tr><th>talker_id</th>
+		<td><%= form.text_field :talker_id %></td></tr>
+	<tr><th>ts</th>
+		<td><%= form.text_field :ts %></td></tr>
+	</tr>
+	<tr><th></th>
+			<td><%= form.text_field :kubun %></td></tr>
+	</tr>
+	<tr><th></th>
+			<td><%= form.text_field :comment %></td></tr>
+	</tr>
+	<tr><th></th>
+		<td><%= form.submit "送信" %></td></tr>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,17 @@
+<h1>Talkers#index</h1>
+<p>Find me in app/views/talkers/index.html.erb</p>
+<p><%= @msg %></p>
+<pre>
+<table>
+	<tr>
+		<th>アカウント＃</th><th>アカウント名</th><th>パスワード</th></th>
+	</tr>
+	<% @data.each do |obj| %>
+	<tr>
+		<td><%= obj.id %></td>
+		<td><%= obj.name %></td>
+		<td><%= obj.pass %></td>
+	</tr>
+	<% end %>
+</table>
+</pre>
