@@ -18,3 +18,18 @@ language: ruby
  script:
   - bundle exec rspec spec
  dist: precise
+ 
+ deploy:
+  provider: heroku
+  api_key:
+    secure: 1a:34:f0:6c:0c:d2:2e:d4:80:0f:9c:f8:ea:1f:dc:0c ubuntu@kichiobookman-stressshredder-5032839
+    app: calm-garden-50645
+  on:
+    repo: chubachi-pt-2017/StressShredder
+  run:
+    - "rake db:migrate"
+    - restart
+    - "rake cleanup"
+ 
+ 
+ 
