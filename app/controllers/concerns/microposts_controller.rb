@@ -48,7 +48,7 @@ class MicropostsController < ApplicationController
     if @micropost.save
       flash[:success] = "Micropost created!"
         redirect_to root_url
-#      redirect_to controller: 'users', action: 'index',id: [:id]
+#      redirect_to controller: 'users', action: 'index',id: @user.id
 
     else
       render 'static_pages/home'
