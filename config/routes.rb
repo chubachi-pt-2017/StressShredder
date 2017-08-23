@@ -1,14 +1,40 @@
 Rails.application.routes.draw do
 
-  get   'list2'      =>'static_pages#list2'
+  get '/users/show/:id'        => 'users#show'
+###  
+   get 'microposts/guchi/:id'  => 'microposts#guchi'
+#  get '  get '/microposts/index'/:id'   => 'microposts#index'
 
-  get 'sessions/new'
-  get 'users/new'
-  #resources :microposts
+  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
+  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
+  get    '/inori-feedback' => 'static_pages#inori-feedback'
   
-  #root 'users#index'
-  root                'static_pages#home'
-  get 'static_pages/home'
+#  get    '/guchi_feedback'    => 'users#guchi_feedback'
+#  get    '/inori_feedback'    => 'users#inori_feedback'
+#  get    '/jiman_feedback'    => 'users#jiman_feedback'
+###
+  get    '/guchi/:id'    => 'users#guchi'
+  get    '/jiman/:id'    => 'users#jiman'
+  get    '/inori/:id'    => 'users#inori'
+  get    '/list/:id'    => 'users#list'
+#
+  get '/microposts/:id'   => 'microposts#index'
+  get '/microposts/list/:id'   => 'microposts#list'
+###
+  get '/users/guchi/:id'        => 'users#guchi'  
+  get '/users/:id'        => 'users#index'
+  get '/users/list/:id'        => 'users#list'
+###
+  get 'sessions/new'
+  get 'users/new'       => 'users#new'
+  get 'microposts/new/:id'  => 'microposts#new'
+###
+  resources :microposts
+  
+# root                'users#index'
+ root                'static_pages#home'
+#  get 'static_pages/home'
+  
   get    '/help'    => 'static_pages#help'
   get    '/login'   => 'sessions#new'
   post   '/login'   => 'sessions#create'
@@ -17,16 +43,13 @@ resources :users
   
 
 ###
-  get    '/guchi'    => 'static_pages#guchi'
-  get    '/jiman'    => 'static_pages#jiman'
-  get    '/inori'    => 'static_pages#inori'
-  get    '/list'    => 'static_pages#list'
+#  get    '/guchi'    => 'static_pages#guchi'
+#  get    '/jiman'    => 'static_pages#jiman'
+#  get    '/inori'    => 'static_pages#inori'
+#  get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
    #post '/signup'  => 'users#create'
-  
-  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
-  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
-  get    '/inori-feedback' => 'static_pages#inori-feedback'
+
 ###
 
   

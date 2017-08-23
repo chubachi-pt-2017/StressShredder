@@ -10,52 +10,62 @@
 	<header>
 		<h1>Welcome to the StressShredder</h1>
 	</header>
-
+      <p><%= @msg %></p>
+      
 	<div CLASS= "container"> 
-	   　　　　　
 	<div CLASS= "content">
 		<article>
-	<h2>「ぐち」「じまん」「おいのり」３種類の気持ちを吐き出しましょう。<br>
-			自分が抱えている気持ちをあえて言葉にすることでガス抜きできます。</h2>
-			
+			<h2>「ぐち」「じまん」「おいのり」３種類の気持ちを吐き出しましょう。<br>自分が抱えている気持ちをあえて言葉にすることでガス抜きできます。</h2>
 			<figure　>
-			<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
+				<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
+<!---	<img src= "jizou.png"　alt= "お地蔵さんです。"　--->
 			</figure>
 			<h2>Nouaru-Taka Tsume Kakusu</h2>
 		</article>
 	</div>
 	
 	<div CLASS= "menu">
-	<aside>
-	<ul>
-		<li><font size="11">
-		   <%= link_to 'ぐち', 'guchi.html' %>
-		</font>
-		</li>
-		  <br><br>
-		<li><font size="11">
-		    <%= link_to 'じまん', 'jiman.html' %>
-		</font></li>
-		  <br><br>
-		<li><font size="11">
-		    <%= link_to 'おいのり', 'inori.html' %>
-		</font></li>
-		  <br><br>
-		</ul>
-		</aside>
-		
-		<br><br><br><br><br>
-		<Center>
-		  <font size="11" face="Impact">
-		  <%= link_to 'ふりかえり', 'list2.html' %></font></li>
-		</Center>
-		
-		<br><br><br><br><br>
-		 <font size="11" face="Impact">
-		 <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-		 </font></li>
+		<br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br>
+				
+			<font size="11" face="Impact">
+			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+			</font></li>
 	</div>
 	</div>
+
+====<br>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+
+  <div class="center jumbotron">
+    <h1>Welcome to the </h1>
+    <h1>Stress Shredder </h1>
+    <h2>
+      This is the home page for the
+      <a href="http://railstutorial.jp/">Stress Shredder </a>
+      chubachi PBL QIM Team's application.
+    </h2>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails logo"),
+              'http://rubyonrails.org/' %>
+<% end %>
+====<br>
+	
+	
 
 <div CLASS= "footer">
 	<small>Copyright &copy; team_QIM, all rights reserved.</small>

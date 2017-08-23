@@ -3,9 +3,64 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
+      </h1>
+      
+      <p><%= @msg %></p>
         <%= gravatar_for @user %>
         <%= @user.name %>
+         <%= @user.email %>
+         <br>
+         comment:<b>
+        <%= @micropost.content %>
+        </h1>
+        <h1>People#index</h1>
+  
+<p><%= @msg %></p>
+<table>
+	<tr><th>Id: </th>
+		<td><%= @micropost.id %></td></tr>
+	<tr><th>Age: </th>
+		<td><%= @micropost.content %></td></tr>
+	<tr><th>Message: </th>
+		<td> </td></tr>
+</table>
+---<br>
+    </section>
+ </aside>
+</div><% provide(:title, @user.name) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+          
       </h1>
+      <p><%= @msg %></p>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+         <%= @user.email %>
+         <br>
+         
+    comment:<b>
+
+    <%= @micropost.content %>
+    </h1>
+        
+<h1>People#index</h1>
+<p><%= @msg %></p>
+
+<table>
+	<tr><th>=== Id: </th>
+		<td><%= @micropost.id %></td></tr>
+	<tr><th>=== kubun: </th>
+		<td><%= @micropost.content %></td></tr>
+	<tr><th>=== Message: </th>
+		<td>
+		</td>
+	</tr>
+	</tr>
+</table>
+        ---<br>
     </section>
   </aside>
 </div>
