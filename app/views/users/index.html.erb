@@ -1,29 +1,73 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1></h1>
 
-<h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        </h1>
+    </section>
+  </aside>
+</div>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!DOCUTYPE html>
+<html land= "ja">
+<head>
+	<meta charset= "utf-8">
+	<title>StressShredder</title>
+	<%= stylesheet_link_tag "application" %>
 
-<br>
+</head>
+<body>
+	<header>
+		<h1>Welcome to the StressShredder</h1>
+	</header>
+	
 
-<%= link_to 'New User', new_user_path %>
+      
+	<div CLASS= "container"> 
+	<div CLASS= "content">
+		<article>
+			<p>コップが溢れてしまう前に、<br>「ぐち」「じまん」「おいのり」３種類の本音を吐き出してしまおう。<br>自分が抱えている気持ちをあえて言葉にすることで葛藤を見出せる・・・・かも。</p>
+			<figure　>
+				<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
+			</figure>
+			<h2>Nouaru-Taka Tsume Kakusu</h2>
+		</article>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<div CLASS= "menu">
+		<aside>
+		<ul>
+		<li><font size="11">
+
+     <%= link_to 'ぐち', controller: 'users', action: 'guchi' ,  users: @user %> 
+		</font>
+		</li>
+		  <br><br><br><br>
+		<li><font size="11">
+		<%= link_to 'じまん', controller: 'users', action: 'jiman' , users: @user %> 
+		</font></li>
+		  <br><br><br><br>
+		<li><font size="11">
+		<%= link_to 'おいのり', controller: 'users', action: 'inori' , users: @user %> 
+		</font></li>
+		  <br><br><br><br><br>
+		</ul>
+		</aside>
+
+  
+		<br><br><br><br><br><br><br><br>
+			<font size="11" face="Impact">
+			<%= link_to 'ふりかえり', controller: 'users', action: 'list' , users: @user %> 
+			</font>
+	</div>
+	</div>
+
+<div CLASS= "footer">
+	<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	<br><br><br>
+</div>
+</body>
+</html>
+

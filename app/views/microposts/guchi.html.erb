@@ -1,0 +1,36 @@
+<!DOCUTYPE html>
+<html land= "ja">
+<head>
+	<meta charset= "utf-8">
+	<title>StressShredder</title>
+	<%= stylesheet_link_tag "guchi" %>
+</head>
+      <p><%= @msg %></p>
+<body>
+	<header>
+		<h1>StressShredder</h1>
+	</header>
+	<article>
+	  <h1>ぐちを吐き出しましょう</h1>
+	  <p>
+	  <h2>これから、ぐちをこぼす人として、気持ちを言葉にして発散したい。</h2>
+	  <h2>そうすれば、気持ちがスッキリするからだ。</h2>
+	  <label>
+
+====render form  <br>	  	
+<%= render 'form', micropost: @micropost %>
+====link_to Back  <br>
+<%= link_to 'Back', microposts_path %>
+
+====post action <br>
+<table>
+	<form method="post" action="/microposts/create">
+	</form>
+</table>
+
+	</article>
+	<footer>
+		<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	</footer>
+</body>
+</html>

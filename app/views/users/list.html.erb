@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h2>User name:　</h2>
+<h1><%= @user.name %></h1>
+<h1>ふりかえり</h1>
+<br>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>番号</th>
+      <th>区分</th>
+      <th>書き込み日時</th>
+      <th>コメント</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.id %></td>
+        <td><%= micropost.kubun %></td>
+        <td><%= micropost.updated_at %></td>
+        <td><%= micropost.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+区分：(1:ぐち)(2:じまん)(3:おいのり)<br>
+<br>
+	<footer>
+		<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	</footer>
+</body>
+</html>

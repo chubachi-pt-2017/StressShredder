@@ -1,0 +1,58 @@
+<!DOCUTYPE html>
+<html land= "ja">
+<head>
+	<meta charset= "utf-8">
+	<title>StressShredder</title>
+	<%= stylesheet_link_tag "jiman" %>
+</head>
+<body>
+	<header>
+		<h1>StressShredder</h1>
+	</header>
+	<article>
+	<h1>じまんしましょう</h1>
+	<p>
+	<h2>これから、自慢する人として、自分の感動を記録しておきたい。</h2>
+	<h2>そうすれば、情熱が生まれるからだ。</h2>
+	<label>
+
+<% @micropost.attributes = { kubun: "2"} %> 
+
+<h1>じまん：</h1>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
+
+    <h2>
+      This is the home page for the
+      <a href="http://railstutorial.jp/">Ruby on Rails Tutorial</a>
+      sample application.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails logo"),
+              'http://rubyonrails.org/' %>
+<% end %>
+====<br>
+
+	</article>
+	<footer>
+		<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	</footer>
+	
+</body>
+</html>

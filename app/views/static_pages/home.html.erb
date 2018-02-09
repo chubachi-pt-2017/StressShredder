@@ -11,49 +11,26 @@
 		<h1>Welcome to the StressShredder</h1>
 	</header>
 
+      
 	<div CLASS= "container"> 
-	   　　　　　
 	<div CLASS= "content">
 		<article>
-	<h2>「ぐち」「じまん」「おいのり」３種類の気持ちを吐き出しましょう。<br>
-			自分が抱えている気持ちをあえて言葉にすることでガス抜きできます。</h2>
-			
+			<h2>「ぐち」「じまん」「おいのり」３種類の気持ちを吐き出しましょう。<br>自分が抱えている気持ちをあえて言葉にすることでガス抜きできます。</h2>
 			<figure　>
-			<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
+				<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
+<!---	<img src= "jizou.png"　alt= "お地蔵さんです。"　--->
 			</figure>
 			<h2>Nouaru-Taka Tsume Kakusu</h2>
 		</article>
 	</div>
 	
 	<div CLASS= "menu">
-	<aside>
-	<ul>
-		<li><font size="11">
-		   <%= link_to 'ぐち', 'guchi.html' %>
-		</font>
-		</li>
-		  <br><br>
-		<li><font size="11">
-		    <%= link_to 'じまん', 'jiman.html' %>
-		</font></li>
-		  <br><br>
-		<li><font size="11">
-		    <%= link_to 'おいのり', 'inori.html' %>
-		</font></li>
-		  <br><br>
-		</ul>
-		</aside>
-		
-		<br><br><br><br><br>
-		<Center>
-		  <font size="11" face="Impact">
-		  <%= link_to 'ふりかえり', 'list2.html' %></font></li>
-		</Center>
-		
-		<br><br><br><br><br>
-		 <font size="11" face="Impact">
-		 <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-		 </font></li>
+		<br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br>
+			<h2>下のボタンを押して登録してください。</h2>
+			<font size="11" face="Impact">
+			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+			</font></li>
 	</div>
 	</div>
 
